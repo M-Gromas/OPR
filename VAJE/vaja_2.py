@@ -26,6 +26,7 @@ def trenutna_useskup(lat,lon):
     b = (min(call["daily"]["temperature_2m_min"]))
 
     x = ["temperature_2m_max"].index(a)
-    Y = ["temperature_2m_min"].index(b)
+    y = ["temperature_2m_min"].index(b)
     print(x,y)
 trenutna_useskup(45.12, 14.5)
+
