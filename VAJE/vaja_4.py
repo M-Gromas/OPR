@@ -7,7 +7,7 @@ url = f"https://opentdb.com/api.php?amount={vpr}&category=23&difficulty=hard&typ
 klic = requests.get(url).json()
 
 vprašanja = klic["results"]
-točke = 0
+točke = 1
 for v in vprašanja:
     prav = v["correct_answer"]
     odgovori = v["incorrect_answers"] + [prav]
@@ -20,5 +20,10 @@ for v in vprašanja:
     odgovor = int(input("Odgovor: "))
     print(prav == odgovori[odgovor-1])
     if odgovor == prav:
-        točke+1
-    if odgovor == v["incorrect_anwsers"]
+        točke+=1
+    elif odgovor in ["incorrect_anwsers"]:
+        točke+=0
+    print(točke)
+    print("-------------------------------------------")
+    print(prav)
+    print("-------------------------------------------")
